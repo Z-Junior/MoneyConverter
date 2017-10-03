@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class MoneyConverter
 {
     private final static Scanner SCAN = new Scanner(System.in);
+    private final static Conversions CONVERSIONS = new Conversions();
 
     public static void main(String[] args)
     {
@@ -21,6 +22,19 @@ public class MoneyConverter
             iDimes = PromptInput("Number of dimes: ");
             iNickels = PromptInput("Number of nickels: ");
             iPennies = PromptInput("Number of pennies: ");
+
+            CONVERSIONS.InsertCoins(iQuarters, iDimes, iNickels, iPennies);
+
+            System.out.println("Monetary worth: " + CONVERSIONS.GetWorth());
+        } else if (iOption == 2)
+        {
+            double fWorth;
+
+            fWorth = PromptInputDouble("Enter monetary worth: ");
+
+            int[] Coins = CONVERSIONS.GetCoinsFromMonetary(fWorth);
+
+            System.out.println("Worth: " + Coins[0] + " Ten Dollars, " + Coins[1] + " Five Dollars, " + Coins[2] + " Dollars, " + Coins[3] + " Quarters, " + Coins[4] + " Dimes, " + Coins[5] + " Nickels, " + Coins[6] + " Pennies");
         }
     }
 
@@ -43,5 +57,26 @@ public class MoneyConverter
         }
 
         return SCAN.nextInt();
+    }
+
+    /**
+     * Prompt user to enter an integer based on the question, and loop until integer only.
+     * @param {Buffer} question
+     * @return {Double} User input
+     */
+    private static double PromptInputDouble(String question)
+    {
+        System.out.print(question);
+
+        while (!SCAN.hasNextDouble())
+        {
+            System.out.flush();
+
+            System.out.print("Decimal only: ");
+
+            SCAN.next();
+        }
+
+        return SCAN.nextDouble();
     }
 }
