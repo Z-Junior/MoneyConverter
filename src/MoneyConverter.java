@@ -5,7 +5,8 @@
 
 import java.util.Scanner;
 
-public class MoneyConverter {
+public class MoneyConverter
+{
     private static int iQuarters, iDimes, iNickels, iPennies;
     private final static Scanner SCAN = new Scanner(System.in);
 
