@@ -7,15 +7,21 @@ import java.util.Scanner;
 
 public class MoneyConverter
 {
-    private static int iQuarters, iDimes, iNickels, iPennies;
     private final static Scanner SCAN = new Scanner(System.in);
 
     public static void main(String[] args)
     {
-        iQuarters = PromptInput("Number of quarters: ");
-        iDimes = PromptInput("Number of dimes: ");
-        iNickels = PromptInput("Number of nickels: ");
-        iPennies = PromptInput("Number of pennies: ");
+        int iOption = PromptInput("Enter 1 for coin conversion, enter 2 for float convert: ");
+
+        if (iOption == 1)
+        {
+            int iQuarters, iDimes, iNickels, iPennies;
+
+            iQuarters = PromptInput("Number of quarters: ");
+            iDimes = PromptInput("Number of dimes: ");
+            iNickels = PromptInput("Number of nickels: ");
+            iPennies = PromptInput("Number of pennies: ");
+        }
     }
 
     /**
