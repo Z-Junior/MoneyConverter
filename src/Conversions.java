@@ -34,7 +34,7 @@ class Conversions
         int Quarters = (int) Math.floor((fWorth % TEN_DOLLAR_WORTH % FIVE_DOLLAR_WORTH % DOLLAR_WORTH) / QUARTER_WORTH);
         int Dimes = (int) Math.floor((fWorth % TEN_DOLLAR_WORTH % FIVE_DOLLAR_WORTH % DOLLAR_WORTH % QUARTER_WORTH) / DIME_WORTH);
         int Nickles = (int) Math.floor((fWorth % TEN_DOLLAR_WORTH % FIVE_DOLLAR_WORTH % DOLLAR_WORTH % QUARTER_WORTH % DIME_WORTH) / NICKEL_WORTH);
-        int Pennies = (int) Math.floor((fWorth % TEN_DOLLAR_WORTH % FIVE_DOLLAR_WORTH % DOLLAR_WORTH % QUARTER_WORTH % DIME_WORTH % NICKEL_WORTH) / PENNY_WORTH);
+        int Pennies = (int) Math.ceil((fWorth % TEN_DOLLAR_WORTH % FIVE_DOLLAR_WORTH % DOLLAR_WORTH % QUARTER_WORTH % DIME_WORTH % NICKEL_WORTH) / PENNY_WORTH);
 
         return new int[]{Tens, Fives, Ones, Quarters, Dimes, Nickles, Pennies};
     }
