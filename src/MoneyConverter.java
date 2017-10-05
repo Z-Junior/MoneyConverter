@@ -28,9 +28,7 @@ public class MoneyConverter
             System.out.println("Monetary worth: " + CONVERSIONS.GetWorth());
         } else if (iOption == 2)
         {
-            double fWorth;
-
-            fWorth = PromptInputDouble("Enter monetary worth: ");
+            double fWorth = PromptInputDouble("Enter monetary worth: ");
 
             int[] Coins = CONVERSIONS.GetCoinsFromMonetary(fWorth);
 
